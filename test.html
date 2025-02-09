@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Recognition Test</title>
+</head>
+<body>
+    <h1>Voice Recognition Test</h1>
+    <div id="results">
+        <p>Testing speech recognition...</p>
+        <ul>
+            <li>WebkitSpeechRecognition: <span id="speech-support">Testing...</span></li>
+            <li>MediaDevices: <span id="media-support">Testing...</span></li>
+            <li>AudioContext: <span id="audio-support">Testing...</span></li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('speech-support').textContent = 
+                'webkitSpeechRecognition' in window ? '✅ Supported' : '❌ Not supported';
+            
+            document.getElementById('media-support').textContent = 
+                'mediaDevices' in navigator ? '✅ Supported' : '❌ Not supported';
+            
+            document.getElementById('audio-support').textContent = 
+                'AudioContext' in window ? '✅ Supported' : '❌ Not supported';
+        });
+    </script>
+</body>
+</html> 
