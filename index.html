@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Discharge Summary - Voice to Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .recording {
+            background-color: #ff4444 !important;
+        }
+        .language-selector {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medical Discharge Summary</h1>
+    <div class="container">
+        <select id="languageSelector" class="language-selector">
+            <option value="en-US">English (US)</option>
+            <option value="es-ES">Español (Spanish)</option>
+            <option value="fr-FR">Français (French)</option>
+            <option value="de-DE">Deutsch (German)</option>
+            <option value="it-IT">Italiano (Italian)</option>
+            <option value="pt-BR">Português (Brazilian)</option>
+            <option value="ru-RU">Русский (Russian)</option>
+            <option value="zh-CN">中文 (Chinese-Simplified)</option>
+            <option value="ja-JP">日本語 (Japanese)</option>
+            <option value="ko-KR">한국어 (Korean)</option>
+            <option value="ar-SA">العربية (Arabic)</option>
+            <option value="hi-IN">हिंदी (Hindi)</option>
+        </select>
+        <form id="dischargeSummaryForm">
+            <div class="form-group">
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" required>
+                <button type="button" class="voice-btn" data-target="patientName">🎤</button>
+            </div>
+
+            <div class="form-group">
+                <label for="diagnosis">Primary Diagnosis:</label>
+                <textarea id="diagnosis" required></textarea>
+                <button type="button" class="voice-btn" data-target="diagnosis">🎤</button>
+            </div>
+
+            <div class="form-group">
+                <label for="treatment">Treatment Provided:</label>
+                <textarea id="treatment" required></textarea>
+                <button type="button" class="voice-btn" data-target="treatment">🎤</button>
+            </div>
+
+            <div class="form-group">
+                <label for="medications">Discharge Medications:</label>
+                <textarea id="medications" required></textarea>
+                <button type="button" class="voice-btn" data-target="medications">🎤</button>
+            </div>
+
+            <div class="form-group">
+                <label for="followUp">Follow-up Instructions:</label>
+                <textarea id="followUp" required></textarea>
+                <button type="button" class="voice-btn" data-target="followUp">🎤</button>
+            </div>
+
+            <button type="submit">Save Discharge Summary</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
